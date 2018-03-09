@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1.Underline= post.title
+  p= post.author
+  p= post.body
+  button
+    a(href=`/posts/edit/${post._id}`) Edit
+  button.delete(data-src= post._id type="submit") Delete
+block scripts
+  script(src="/dist/main.js")
+  

@@ -1,0 +1,10 @@
+extends layout
+ 
+block content
+  h1.Underline Posts
+  ul
+    each post, i in posts
+      li
+        a(href=`/posts/${post._id}`) 
+          h1= post.title
+        p= post.body

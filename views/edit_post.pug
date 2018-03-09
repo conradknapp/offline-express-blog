@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1.Underline Edit Post
+  form.Edit__Post(action=`/posts/edit/${post._id}`, method="post")
+    input(name="title" type="text" placeholder="Title" value= post.title)
+    input(name="author" type="text" placeholder="Author" value= post.author)
+    textarea(name="body")= post.body
+    button(type="submit") Submit
