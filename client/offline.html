@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    body {
+      text-align: center;
+    }
+    
+    img {
+      height: 300px;
+      width: 400px;
+    }
+
+    button {
+      cursor: pointer;
+      color: #7fa014;
+      font-size: 1.2rem;
+      padding: 0.3em;
+    }
+
+    button a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button:hover {
+      color:#44550c; 
+    }
+
+    .Links {
+      display: none;
+      text-decoration: none;
+    }
+  </style>
+  <title>Offline</title>
+</head>
+<body>
+  <h1>You are offline</h1>
+  <img src="/dist/technical-difficulties.jpg" alt="">
+  <p>Try refreshing while waving your phone around</p>
+  <button class="Show__Links">Or click here for saved posts</button>
+  <p class="Links"></p>
+  
+  <script>
+    const offlineBtn = document.querySelector('.Show__Links');
+    const linkSection = document.querySelector('.Links');
+
+    addEventListener('DOMContentLoaded', event => {
+      const links = Object.values(localStorage).map(el => JSON.parse(el));
+      linkSection.innerHTML = links.map(el => `<p><a href=${el.link}>${el.title}</a></p>`).join('');
+    })
+
+    offlineBtn.addEventListener('click', () => {
+      linkSection.style.display = 'block';
+    })
+  </script>
+</body>
+</html>

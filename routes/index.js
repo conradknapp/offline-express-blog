@@ -1,10 +1,23 @@
 const express = require("express");
 const router = express.Router();
+const fs = require("fs");
 const Post = require("../models/Post");
 
 router.get("/", async (req, res) => {
   const posts = await Post.find({}).exec();
   res.render("index", { posts });
+});
+
+router.get("/sw.js", (req, res) => {
+  res.set("Content-Type", "application/javascript");
+  const input = fs.createReadStream(`${__dirname}/../client/sw.js`);
+  input.pipe(res);
+});
+
+router.get("/offline.html", (req, res) => {
+  res.set("Content-Type", "	text/html");
+  const input = fs.createReadStream(`${__dirname}/../client/offline.html`);
+  input.pipe(res);
 });
 
 router
