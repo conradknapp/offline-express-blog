@@ -1,10 +1,10 @@
 extends layout
  
 block content
-  h1.Underline Posts
+  h1.Title__Underline Posts
   ul
     each post, i in posts
-      li
-        a(href=`/posts/${post._id}`) 
+      li.Post
+        a(href=`/posts/${post._id}` class="Post__Link") 
           h1= post.title
         p= post.body

@@ -7,8 +7,9 @@ html(lang="en")
     link(rel="stylesheet", href="/dist/style.css")
     title Blog
   body
+    a(href="/" style="position: absolute;") Home
     block content
-    footer 
+    footer
       p Copyright &copy; #{new Date().getFullYear()}
   scripts
     script(src="/dist/home.js")

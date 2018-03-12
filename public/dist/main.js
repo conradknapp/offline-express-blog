@@ -2,7 +2,7 @@ if (navigator.serviceWorker) {
   navigator.serviceWorker.register("/sw.js");
 }
 
-const deleteBtn = document.querySelector(".delete");
+const deleteBtn = document.querySelector(".PostBtn__Delete");
 
 deleteBtn.addEventListener("click", e => {
   const postId = e.target.dataset.src;

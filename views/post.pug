@@ -1,12 +1,14 @@
 extends layout
 
 block content
-  h1.Underline= post.title
+  h1.Title__Underline= post.title
   p= post.author
   p= post.body
-  button.offline Save for offline
+  button.PostBtn__Offline Save for offline
   button
     a(href=`/posts/edit/${post._id}`) Edit
-  button.delete(data-src= post._id type="submit") Delete
+  button.PostBtn__Delete(data-src= post._id type="submit") Delete
+  .Flash__Message
+    p Post saved for offline access!!! 😜 🎉
 block scripts
   script(src="/dist/main.js")
