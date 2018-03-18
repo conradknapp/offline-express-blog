@@ -12,6 +12,14 @@ const postSchema = mongoose.Schema({
   body: {
     type: String,
     required: true
+  },
+  topic: {
+    type: String,
+    required: true
+  },
+  publishedDate: {
+    type: Date,
+    default: new Date()
   }
 });
 

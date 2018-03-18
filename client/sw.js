@@ -1,5 +1,4 @@
-addEventListener("install", event => {
-  console.log("SW Installed");
+self.addEventListener("install", event => {
   event.waitUntil(
     caches.open("static").then(cache => {
       return cache.addAll([
@@ -19,7 +18,7 @@ addEventListener("activate", () => {
   console.log("SW Activated");
 });
 
-addEventListener("fetch", event => {
+self.addEventListener("fetch", event => {
   var isPostsRoute = /posts/.test(event.request.url);
 
   if (!isPostsRoute) {

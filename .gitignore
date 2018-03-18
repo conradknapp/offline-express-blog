@@ -2,11 +2,11 @@
 # dependencies
 /node_modules
 /keys
-/config
 # testing
 /coverage
 # production
 build
+config
 # misc
 .DS_Store
 .env.local

@@ -1,10 +1,15 @@
 extends layout
  
 block content
-  h1.Title__Underline Posts
-  ul
-    each post, i in posts
-      li.Post
-        a(href=`/posts/${post._id}` class="Post__Link") 
-          h1= post.title
-        p= post.body
+  .container
+    h1.Title__Underline Posts
+    ul
+      each post, i in posts
+        li(data-topic= post.topic).Post
+          a(href=`/posts/${post._id}` class="Post__Link") 
+            h1= post.title
+          p= post.body.split(' ').slice(0, 25).join(' ')
+    form
+      label Stay in the loop
+      input(type="email" class="email-input")
+      button(type="submit" class="email-submit") Submit

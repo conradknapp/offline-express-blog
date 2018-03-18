@@ -3,33 +3,38 @@
 - Routing using express.Router()
 - Exporting Route Callback Functions as Controllers
 - Gzipping, Minifying (using compression, express-minify)
-- Aggressive Caching of Assets (using Cache-Control, Expires headers)
-- New/Useful CSS Features (Grid, 'font-display' property, new text decoration properties, :not())
-- ES6 / ES7 Features (Async / Await, Object.entries / Object.values)
+- Aggressive Caching of App Shell (using Cache-Control, Expires headers)
+- New/Useful CSS Features (Custom Properties (Variables), Grid, 'font-display' property, new text decoration properties, :not())
+- Advanced JS Methods (namely .reduce())
+- ES6 / ES7 Features (Async / Await syntax, Object.entries() / Object.values())
 - Pug Templating / Mixins
-- BEM Naming Convention for Styles
+- BEM Naming Convention for CSS
 - Dynamic Environment Variable Swapping Based on Environment (to use as NODE_ENV= in package.json scripts)
+- rem, em units (rem largely for text sizing, em for most everything else, particularly media queries)
 - Service Worker (for offline functionality)
 - Mongoose ORM with MLab MongoDB database
+- Flash Messaging
+- Mobile-First Design
+- Full CRUD Functionality, Uses Markdown Syntax for Posts (try it yourself!)
 
 Will Likely Add:
 
 - Mongoose lifecycle hooks (i.e. pre .save())
-- ~~Service Worker (for offline functionality)~~
 - Background Sync
 - manifest.json
 - Testing (probably with Jest and Enzyme)
 - JSON Web Tokens
-- ~~Flash Messaging (something like Toastr)~~
 - express-validator (to provide feedback to user on auth)
 - Intersection Observer API (if there are images)
 - Push notifications
 - CDN (maybe a trial version from cloudinary or something, we'll see)
-
-Questions: 
-
-- ~~How to cache bust when adding/editing posts (the Cache-Control headers didn't pose a problem with this, but service worker requires a page refresh to update content, since it is caching the HTML, as well as JS/CSS)~~
+- Sending emails with Nodemailer
+- Provide options for sign-up (i.e. provide both email as well as phone)
 
 To Do: 
 
-- Have each post check contents of localStorage on page load to see if post has already been saved, so upon future visits, it will continue to say 'Post saved'
+- Revisit essentials of [mobile UX Design](https://developers.google.com/web/fundamentals/design-and-ux/principles/) to make sure site satisfies them
+
+Maybe: 
+
+- Establish your [app shell](https://developers.google.com/web/fundamentals/architecture/app-shell), aggressively cache

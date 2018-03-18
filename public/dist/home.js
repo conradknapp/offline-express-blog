@@ -1,24 +1,55 @@
 const offlineBtn = document.querySelector(".PostBtn__Offline");
 const flashMsg = document.querySelector(".Flash__Message");
 const currentPath = window.location.pathname;
-const title = document.querySelector('h1[class="Title__Underline"]').innerText;
+let title = document.querySelector(".Post__Title");
 
-offlineBtn.addEventListener("click", () => {
-  const pageResources = [currentPath];
+if (title) {
+  title = document.querySelector(".Post__Title").innerText;
+  document.addEventListener("DOMContentLoaded", () => {
+    var ls_items = Object.values(localStorage);
 
-  caches.open("static").then(cache => {
-    flashMsg.style.display = "grid";
-    const updateCache = cache.addAll(pageResources);
-    const linkData = { title, link: currentPath };
-    localStorage.setItem(`ol-${title}`, JSON.stringify(linkData));
+    var ls = ls_items.reduce((acc, val) => {
+      val = JSON.parse(val);
 
-    updateCache.then(() => {
+      if (val.title === title) {
+        acc.push(val);
+      }
+      return acc;
+    }, []);
+
+    if (ls[0].title === title) {
       offlineBtn.innerText = "Post saved";
-      console.log("Post is now available offline.");
-    });
+      offlineBtn.setAttribute("disabled", true);
+    }
+  });
+}
 
-    updateCache.catch(error => {
-      console.error("Post could not be saved offline.");
+if (offlineBtn) {
+  offlineBtn.addEventListener("click", () => {
+    const pageResources = [currentPath];
+
+    caches.open("static").then(cache => {
+      flashMsg.style.display = "grid";
+      const updateCache = cache.addAll(pageResources);
+      const linkData = { title, link: currentPath };
+      localStorage.setItem(`ol-${title}`, JSON.stringify(linkData));
+
+      updateCache
+        .then(() => {
+          offlineBtn.innerText = "Post saved";
+          console.log("Post is now available offline.");
+        })
+        .catch(error => {
+          console.error("Post could not be saved offline.");
+        });
     });
   });
+}
+
+let toggleNav = document.querySelector(".toggleNav");
+
+toggleNav.addEventListener("click", () => {
+  let toggleMenu = document.querySelector(".Nav ul");
+  toggleMenu.classList.toggle("open");
+  toggleNav.classList.toggle("clicked");
 });

@@ -7,10 +7,20 @@ html(lang="en")
     link(rel="stylesheet", href="/dist/style.css")
     title Blog
   body
-    a(href="/" style="position: absolute;") Home
+    nav.Nav
+      a(href="#" class="toggleNav") •••
+      ul
+        li
+          a(href="/") Home
+        li
+          a(href="/posts/add") Add Post
+        li
+          a(href="/tags") Tags
+        li
+          a(href="/about") About
     block content
     footer
-      p Copyright &copy; #{new Date().getFullYear()}
+      p Conrad Knapp &copy; #{new Date().getFullYear()}
   scripts
     script(src="/dist/home.js")
     block scripts

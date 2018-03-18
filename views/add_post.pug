@@ -5,5 +5,9 @@ block content
   form.Add__Post(action="/posts/add", method="post")
     input(name="title" type="text" placeholder="Title")
     input(name="author" type="text" placeholder="Author")
+    select(name="topic")
+      option(value="HTML") HTML
+      option(value="CSS") CSS
+      option(value="JS" selected) JS
     textarea(name="body")
     button(type="submit") Submit

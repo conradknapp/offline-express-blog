@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const Post = require("../models/Post");
+const md = require("node-markdown").Markdown;
 
 router.get("/", async (req, res) => {
   const posts = await Post.find({}).exec();
@@ -12,6 +13,10 @@ router.get("/sw.js", (req, res) => {
   res.set("Content-Type", "application/javascript");
   const input = fs.createReadStream(`${__dirname}/../client/sw.js`);
   input.pipe(res);
+});
+
+router.get("/about", (req, res) => {
+  res.render("about");
 });
 
 router.get("/offline.html", (req, res) => {
@@ -29,6 +34,7 @@ router
     const post = await new Post({
       title: req.body.title,
       author: req.body.author,
+      topic: req.body.topic,
       body: req.body.body
     });
     const postSaved = await post.save();
@@ -38,7 +44,7 @@ router
 router.get("/posts/:postId", async (req, res) => {
   const postId = req.params.postId;
   const post = await Post.findById(postId).exec();
-  res.render("post", { post });
+  res.render("post", { post, md });
 });
 
 router
