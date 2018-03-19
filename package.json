@@ -13,8 +13,8 @@
     "express": "^4.16.2",
     "express-minify": "^1.0.0",
     "lodash.merge": "^4.6.1",
+    "marked": "^0.3.17",
     "mongoose": "^5.0.9",
-    "node-markdown": "^0.1.1",
     "pug": "^2.0.1"
   }
 }

@@ -1,15 +1,17 @@
+const CACHED_ITEMS = [
+  "/",
+  "dist/style.css",
+  "dist/main.js",
+  "/sw.js",
+  "dist/home.js",
+  "/offline.html",
+  "dist/technical-difficulties.jpg"
+];
+
 self.addEventListener("install", event => {
   event.waitUntil(
     caches.open("static").then(cache => {
-      return cache.addAll([
-        "/",
-        "/dist/style.css",
-        "/dist/main.js",
-        "/sw.js",
-        "/dist/home.js",
-        "/offline.html",
-        "/dist/technical-difficulties.jpg"
-      ]);
+      return cache.addAll(CACHED_ITEMS);
     })
   );
 });

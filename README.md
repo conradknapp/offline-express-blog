@@ -10,12 +10,19 @@
 - Pug Templating / Mixins
 - BEM Naming Convention for CSS
 - Dynamic Environment Variable Swapping Based on Environment (to use as NODE_ENV= in package.json scripts)
-- rem, em units (rem largely for text sizing, em for most everything else, particularly media queries)
+- rem / em units (rem largely for text sizing, em for most everything else, particularly media queries)
 - Service Worker (for offline functionality)
 - Mongoose ORM with MLab MongoDB database
 - Flash Messaging
 - Mobile-First Design
-- Full CRUD Functionality, Uses Markdown Syntax for Posts (try it yourself!)
+- Getting / Setting Data from LocalStorage
+- Full CRUD Functionality
+- Posts Use Markdown Syntax with node-markdown (try it yourself!)
+- Forms Sanitization with express-validator
+- Ajax Requests using axios
+- Custom-made SVG Icons
+- Streams
+- Regular Expressions for Text Formatting
 
 Will Likely Add:
 

@@ -1,5 +1,7 @@
 :root {
   --bg: #fff;
+  --text: #555;
+  --letter-spacing: .165em;
 }
 
 @font-face {
@@ -14,8 +16,9 @@ html {
   box-sizing: border-box;
   font-size: 110%;
   font-family: sans-serif;
-  font-weight: 100;
+  line-height: 1.5;
   background: var(--bg);
+  color: var(--text);
 }
 
 body {
@@ -41,40 +44,57 @@ body {
   width: 250px;
   text-align: center;
   display: block;
-  border-color: green;
-  border-width: 2px;
+  border: 2px solid green;
   height: 2.5em;
   margin: 0 auto;
   margin-bottom: .8em;
   background: var(--bg);
-  color: black;
+  outline: none;
+  animation: changeColor 5s ease-in-out infinite;
+}
+
+@keyframes changeColor {
+  0% {
+    border-color: green;
+  }
+  50% {
+    border-color: greenyellow;
+  }
+  100% {
+    border-color: green;
+  }
+}
+
+.email-input:focus {
+  border: 1px solid coral;
+  animation: none;
 }
 
 .email-submit {
-  height: 4em;
+  height: 3em;
   border: none;
-  width: 250px;
+  position: relative;
+  width: 200px;
   border-radius: 4px;
-  box-shadow: 12px 15px 20px rgba(0,0,0,.1);
+  box-shadow: 12px 15px 20px rgba(0,0,0,.3);
   color: white;
   cursor: pointer;
   display: inline-block;
-  font-family: Open Sans,sans-serif;
-  font-size: 12px;
-  font-weight: 600;
+  font-family: 12px sans-serif;
   -webkit-font-smoothing: antialiased;
-  letter-spacing: .165em;
+  letter-spacing: var(--letter-spacing);
   overflow: hidden;
   text-align: center;
   text-overflow: ellipsis;
   text-transform: uppercase;
-  transition: box-shadow .2s ease-in-out,background-color .2s ease-in-out,border-color .2s ease-in-out; 
-  background: #02b3e4;
+  transition: box-shadow .2s ease-in-out, background .2s ease-in-out;
+  background: slateblue;
+  outline: none;
 }
 
 .email-submit:hover {
-  box-shadow: 2px 4px 8px 0 rgba(0,0,0,.1);
-  background: #028bb1;
+  box-shadow: 2px 4px 8px 0 rgba(0,0,0,.4);
+  background:rgb(60, 51, 117);
   color: white;
 }
 
@@ -86,8 +106,9 @@ body {
 }
 
 .topic {
-  border: 2px dotted blue;
   color: slateblue;
+  font-size: 1.5rem;
+  max-height: 70px;
 }
 
 code {
@@ -98,6 +119,22 @@ code {
   border-bottom: 2px solid rgb(196, 104, 104);
   font-style: normal;
   border-radius: 4px;
+}
+
+pre {
+  background: whitesmoke;
+  padding: 5px 20px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.08), 0px 0px 4px rgba(0,0,0,0.05);
+  border: none;
+  font-size: 1.5rem;
+  overflow: auto;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+pre code {
+  border: none;
+  background: transparent;
 }
 
 blockquote p {
@@ -125,6 +162,10 @@ h2::after {
   display: grid;
   grid-gap: 1em;
   grid-template-columns: 1fr;
+  position: relative;
+  max-width: 55rem;
+  margin: 0 auto;
+  padding: 0 .9rem;
 }
 
 .info {
@@ -159,6 +200,10 @@ h1 {
 ol, li, ul {
   padding: 0;
   list-style: none;
+}
+
+form {
+  margin: 3em;
 }
 
 input, select, textarea {
@@ -208,6 +253,8 @@ a, a:link {
   display: flex;
   min-height: 3.75rem;
   align-items: center;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing);
 }
 
 .Nav ul > * {
@@ -233,16 +280,24 @@ a, a:link {
   justify-content: center;
 }
 
-.Title__Underline, .Post__Title {
+.Title__Underline {
   background-color: transparent;
-  font-size: 2.5rem;
-  text-decoration: slateblue double underline;
-  text-underline-position: auto;
+  font-size: 3rem;
+  margin: 1em;
+  text-decoration: slateblue underline wavy;
+  text-underline-position: under;
+}
+
+.Post__Title {
+  background-color: transparent;
+  font-size: 3rem;
+  text-decoration: slateblue underline double; 
+  text-underline-position: under;
 }
 
 .Post {
   background: #fff;
-  padding: 0.4em 0.2em;
+  padding: 1em 0.7em;
   text-align: center;
   margin-bottom: 1em;
   border-radius: 6px;
@@ -277,6 +332,11 @@ a, a:link {
 .Post__Link:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.posts-link {
+  text-transform: uppercase;
+  font-family: monospace;
 }
 
 .time {
@@ -343,6 +403,25 @@ a, a:link {
 
 ul:hover li:not(:hover) {
   opacity: .8;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20vh;
+}
+
+.image-container {
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  margin: 2em;
+  max-height: 100px;
 }
 
 @media screen and (max-width: 500px) {

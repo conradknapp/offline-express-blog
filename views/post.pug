@@ -2,7 +2,8 @@ extends layout
 
 block content
   .post-container
-    p(class="topic")= post.topic
+    img(class="topic" src="https://alligator.io/images/logos/js-logo.svg")
+    //- p(class="topic")= post.topic
     h1.Post__Title= post.title
     p= post.author
     - const date = new Date(post.publishedDate)

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  .container
+    h1.Title__Underline All Posts
+    ul
+      each post, i in allPosts
+        li(data-topic= post.topic).Post
+          a(href=`/posts/${post._id}` class="Post__Link") 
+            h1= post.title
+          p= post.body.split(' ').slice(0, 25).join(' ')

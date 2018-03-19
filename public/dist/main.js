@@ -1,6 +1,6 @@
 if (navigator.serviceWorker) {
   navigator.serviceWorker
-    .register("/sw.js", { scope: "/" })
+    .register("/sw.js")
     .then(res => {
       if (res.installing) {
         console.log("SW Installing");

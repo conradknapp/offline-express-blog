@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const Post = require("../models/Post");
-const md = require("node-markdown").Markdown;
+const md = require("marked");
 
 router.get("/", async (req, res) => {
   const posts = await Post.find({}).exec();
@@ -15,8 +15,17 @@ router.get("/sw.js", (req, res) => {
   input.pipe(res);
 });
 
+router.get("/posts", async (req, res) => {
+  const allPosts = await Post.find({}).exec();
+  res.render("posts", { allPosts });
+});
+
 router.get("/about", (req, res) => {
   res.render("about");
+});
+
+router.get("/topics", (req, res) => {
+  res.render("topics");
 });
 
 router.get("/offline.html", (req, res) => {
