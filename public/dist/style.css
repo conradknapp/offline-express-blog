@@ -74,18 +74,15 @@ body {
   height: 3em;
   border: none;
   position: relative;
-  width: 200px;
-  border-radius: 4px;
+  width: 9em;
+  border-radius: 5px;
   box-shadow: 12px 15px 20px rgba(0,0,0,.3);
   color: white;
   cursor: pointer;
   display: inline-block;
-  font-family: 12px sans-serif;
   -webkit-font-smoothing: antialiased;
   letter-spacing: var(--letter-spacing);
-  overflow: hidden;
   text-align: center;
-  text-overflow: ellipsis;
   text-transform: uppercase;
   transition: box-shadow .2s ease-in-out, background .2s ease-in-out;
   background: slateblue;
@@ -306,11 +303,23 @@ a, a:link {
   margin-bottom: 1em;
   border-radius: 6px;
   box-shadow: 5px 5px 25px 0 rgba(46,61,73,.4);
-  transition: all .2s ease-in-out;
+  position: relative;
+  transition: opacity 200ms ease-in-out; 
 }
 
-.Post:hover {
+.Post::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   box-shadow: 2px 4px 8px 0 rgba(46,61,73,.3);
+  opacity: 0;
+}
+
+.Post::before:hover {
+  opacity: 1;
 }
 
 .Post__Link {

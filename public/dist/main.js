@@ -15,6 +15,10 @@ if (navigator.serviceWorker) {
     });
 }
 
+hljs.initHighlightingOnLoad();
+
+document.querySelectorAll("pre").forEach(node => hljs.highlightBlock(node));
+
 const deleteBtn = document.querySelector(".PostBtn__Delete");
 
 deleteBtn.addEventListener("click", e => {

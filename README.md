@@ -17,12 +17,13 @@
 - Mobile-First Design
 - Getting / Setting Data from LocalStorage
 - Full CRUD Functionality
-- Posts Use Markdown Syntax with node-markdown (try it yourself!)
+- Posts Use Markdown Syntax with marked (try it yourself!)
 - Forms Sanitization with express-validator
 - Ajax Requests using axios
 - Custom-made SVG Icons
 - Streams
 - Regular Expressions for Text Formatting
+- [Performant CSS transitions](http://tobiasahlin.com/blog/how-to-animate-box-shadow/) 
 
 Will Likely Add:
 
@@ -35,7 +36,7 @@ Will Likely Add:
 - Intersection Observer API (if there are images)
 - Push notifications
 - CDN (maybe a trial version from cloudinary or something, we'll see)
-- Sending emails with Nodemailer
+- Sending emails with SendGrid
 - Provide options for sign-up (i.e. provide both email as well as phone)
 
 To Do: 
