@@ -40,6 +40,8 @@ Will Likely Add:
 
 To Do: 
 
+- Maybe add page to cache if user has been on page for a certain amount of time (i.e. a minute or so)
+- Disable links to inaccessible parts of the site when offline 
 - Revisit essentials of [mobile UX Design](https://developers.google.com/web/fundamentals/design-and-ux/principles/) to make sure site satisfies them
 
 Maybe: 

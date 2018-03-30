@@ -9,7 +9,7 @@
   src: url("https://d33wubrfki0l68.cloudfront.net/63e088b1bd7e895530d1fef8192b6cc043a9e806/30dc3/assets/fonts/firasans-ultralightitalic.woff2") format("woff2"), url("https://d33wubrfki0l68.cloudfront.net/f65bedd364a41e3d4a38b57bea908e0318fefbc9/2e1a2/assets/fonts/firasans-ultralightitalic.woff") format("woff");
   font-weight: 200;
   font-style: italic;
-  font-display: fallback;
+  font-display: optional;
 }
 
 html {
@@ -141,7 +141,6 @@ blockquote p {
   border-left: 4px solid red;
   border-radius: 2px;
   padding-left: 1em;
-  text-align: justify;
 }
 
 ::selection {
@@ -166,6 +165,11 @@ h2::after {
   max-width: 55rem;
   margin: 0 auto;
   padding: 0 .9rem;
+}
+
+.post-container p {
+  text-align: justify;
+  margin: 1em 0;
 }
 
 .info {
@@ -369,6 +373,13 @@ a, a:link {
   color: white;
   transform: translateY(100%);
   animation: fadeInUp 0.3s ease-in forwards, removeMessage 3s ease-in forwards;
+}
+
+.buttons {
+  margin: 1em;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 
 .Flash__Message p {

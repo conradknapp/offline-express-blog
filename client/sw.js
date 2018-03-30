@@ -1,11 +1,13 @@
 const CACHED_ITEMS = [
   "/",
-  "dist/style.css",
-  "dist/main.js",
+  "/public/dist/style.css",
+  "/public/dist/main.js",
   "/sw.js",
-  "dist/home.js",
+  "/public/dist/home.js",
   "/offline.html",
-  "dist/technical-difficulties.jpg"
+  "/public/dist/technical-difficulties.jpg",
+  "https://d33wubrfki0l68.cloudfront.net/f65bedd364a41e3d4a38b57bea908e0318fefbc9/2e1a2/assets/fonts/firasans-ultralightitalic.woff",
+  "https://d33wubrfki0l68.cloudfront.net/63e088b1bd7e895530d1fef8192b6cc043a9e806/30dc3/assets/fonts/firasans-ultralightitalic.woff2"
 ];
 
 self.addEventListener("install", event => {

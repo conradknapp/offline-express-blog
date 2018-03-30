@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
 const config = require("./config");
+require("dotenv").config();
 
 const Post = require("./models/Post");
 const setupMiddleware = require("./middleware");

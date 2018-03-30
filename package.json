@@ -8,13 +8,17 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@sendgrid/mail": "^6.2.1",
     "body-parser": "^1.18.2",
     "compression": "^1.7.2",
+    "dotenv": "^5.0.1",
     "express": "^4.16.2",
     "express-minify": "^1.0.0",
     "lodash.merge": "^4.6.1",
     "marked": "^0.3.17",
     "mongoose": "^5.0.9",
-    "pug": "^2.0.1"
+    "nodemailer": "^4.6.3",
+    "pug": "^2.0.1",
+    "sendgrid": "^5.2.3"
   }
 }

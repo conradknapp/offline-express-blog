@@ -3,11 +3,36 @@ const router = express.Router();
 const fs = require("fs");
 const Post = require("../models/Post");
 const md = require("marked");
+const nodemailer = require("nodemailer");
+const sgMail = require("@sendgrid/mail");
 
-router.get("/", async (req, res) => {
-  const posts = await Post.find({}).exec();
-  res.render("index", { posts });
-});
+router
+  .get("/", async (req, res) => {
+    const posts = await Post.find({}).exec();
+    res.render("index", { posts });
+  })
+  .post("/", (req, res) => {
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    console.log(req.body.signup_email);
+    const msg = {
+      to: req.body.signup_email,
+      from: "test@example.com",
+      subject: "You're In!",
+      html:
+        "You are now subscribed to Conrad's Blog. <strong>How cool is that?</strong>"
+    };
+    sgMail.send(msg);
+    res.redirect("/");
+  });
+// .post("/", (req, res) => {
+//   const output = `
+//     <p>You have a new subscriber</p>
+//     <h3>Contact Details</h3>
+//     <ul>
+//       <li>Email: ${req.body.email}</li>
+//     </ul>
+//   `;
+// });
 
 router.get("/sw.js", (req, res) => {
   res.set("Content-Type", "application/javascript");

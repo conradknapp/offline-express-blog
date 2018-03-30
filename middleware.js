@@ -15,6 +15,7 @@ module.exports = app => {
   app.use(compression());
   app.use(minify());
   app.use(
+    "/public",
     express.static(path.join(__dirname, "public"), { maxage: "31536000" })
   );
 

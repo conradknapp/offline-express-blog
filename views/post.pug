@@ -2,18 +2,19 @@ extends layout
 
 block content
   .post-container
-    img(class="topic" src="https://alligator.io/images/logos/js-logo.svg")
+    img(class="topic" src="/public/dist/js.svg")
     //- p(class="topic")= post.topic
     h1.Post__Title= post.title
-    p= post.author
+    h4= post.author
     - const date = new Date(post.publishedDate)
-    p(class="time")= `${date.toDateString().slice(4)}`
+    h5(class="time")= `${date.toDateString().slice(4)}`
     div(data-content= post.body class="output")!= md(post.body, true, allowedTags)
-    button.PostBtn__Offline Save for offline
-    button
-      a(href=`/posts/edit/${post._id}`) Edit
-    button.PostBtn__Delete(data-src= post._id type="submit") Delete
+    .buttons
+      button.PostBtn__Offline Save for offline
+      button
+        a(href=`/posts/edit/${post._id}`) Edit
+      button.PostBtn__Delete(data-src= post._id type="submit") Delete
     .Flash__Message
       p Post saved for offline access!!! 😜 🎉
 block scripts
-  script(src="/dist/main.js")
+  script(src="/public/dist/main.js")
