@@ -5,11 +5,11 @@
 }
 
 @font-face {
-  font-family: "Fira Sans";
-  src: url("https://d33wubrfki0l68.cloudfront.net/63e088b1bd7e895530d1fef8192b6cc043a9e806/30dc3/assets/fonts/firasans-ultralightitalic.woff2") format("woff2"), url("https://d33wubrfki0l68.cloudfront.net/f65bedd364a41e3d4a38b57bea908e0318fefbc9/2e1a2/assets/fonts/firasans-ultralightitalic.woff") format("woff");
-  font-weight: 200;
+  font-family: 'Fira Sans';
   font-style: italic;
-  font-display: optional;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Fira Sans Italic'), local('FiraSans-Italic'), url(https://fonts.gstatic.com/s/firasans/v8/va9C4kDNxMZdWfMOD5VvkrjJYTLVdlTO.woff2) format('woff2');
 }
 
 html {
@@ -183,9 +183,10 @@ h2::after {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Fira Sans', monospace;
+  font-family: 'Fira Sans', sans-serif;
   margin: 10px;
   padding: 0;
+  font-style: italic;
   font-weight: normal;
 }
 
@@ -267,7 +268,9 @@ a, a:link {
 }
 
 .toggleNav {
+  cursor: pointer;
   display: none;
+  font-size: 1.5em;
 }
 
 .toggleNav.clicked {

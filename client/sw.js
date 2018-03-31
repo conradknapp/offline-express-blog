@@ -8,8 +8,8 @@ const CACHED_ITEMS = [
   "/public/dist/technical-difficulties.jpg",
   "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css",
   "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js",
-  "https://d33wubrfki0l68.cloudfront.net/f65bedd364a41e3d4a38b57bea908e0318fefbc9/2e1a2/assets/fonts/firasans-ultralightitalic.woff",
-  "https://d33wubrfki0l68.cloudfront.net/63e088b1bd7e895530d1fef8192b6cc043a9e806/30dc3/assets/fonts/firasans-ultralightitalic.woff2"
+  "https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.1.1/turbolinks.js",
+  "https://fonts.gstatic.com/s/firasans/v8/va9C4kDNxMZdWfMOD5VvkrjJYTLVdlTO.woff2"
 ];
 
 self.addEventListener("install", event => {

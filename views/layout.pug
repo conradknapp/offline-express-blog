@@ -7,11 +7,12 @@ html(lang="en")
     link(rel="stylesheet", href="/public/dist/style.css")
     link(rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css")
-    script(defer src="/public/dist/home.js")
+    script(defer src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.1.1/turbolinks.js")
+    script(defer src="/public/dist/tl.js")
     title Blog
   body
     nav.Nav
-      a(href="#" class="toggleNav") •••
+      p(class="toggleNav") •••
       ul
         li
           a(href="/") Home
@@ -26,4 +27,5 @@ html(lang="en")
       p Conrad Knapp &copy; #{new Date().getFullYear()}
   scripts
     script(  src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js")
+    script(src="/public/dist/home.js")
     block scripts

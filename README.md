@@ -21,8 +21,9 @@
 - Forms Sanitization with express-validator
 - Ajax Requests using axios
 - Custom-made SVG Icons
-- Streams
+- Streams using the file system (i.e. .createReadStream(), .createWriteStream(), .pipe())
 - Regular Expressions for Text Formatting
+- Turbolinks -- fetches new content using XHR requests and swaps out the document body instead of making a full pushback to the server (i.e. no page refreshes)
 - [Performant CSS transitions](http://tobiasahlin.com/blog/how-to-animate-box-shadow/) 
 
 Will Likely Add:
@@ -48,3 +49,8 @@ To Do:
 Maybe: 
 
 - Establish your [app shell](https://developers.google.com/web/fundamentals/architecture/app-shell), aggressively cache
+
+## Helpful Resources During Development
+
+[Using @fontface with Google Fonts](https://coderwall.com/p/5vrdkg/google-fonts-using-fontface-in-your-css)
+[Critical Render Article - CSS Tricks](https://css-tricks.com/the-critical-request/)
